@@ -1,10 +1,10 @@
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import React from 'react';
 
-import Send from '../../../assets/Icons/Send';
-import { Colors, Typography } from '../../../styles/index';
-import Swap from '../../../assets/Icons/Swap';
-import Receive from '../../../assets/Icons/Receive';
+import Send from '../../../../assets/Icons/Send';
+import { Colors, Typography } from '../../../../styles/index';
+import Swap from '../../../../assets/Icons/Swap';
+import Receive from '../../../../assets/Icons/Receive';
 
 interface SRSButtonProps {
   onPress: () => {};

@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Typography } from '../../styles/index';
-import PrimaryButton from '../../components/ui/PrimaryButton/PrimaryButton';
-import SecondaryButton from './../../components/ui/SecondaryButton/SecondaryButton';
-import TertiaryButton from '../../components/ui/TertiaryButton/TertiaryButton';
-import SRSButton from '../../components/ui/SRSButton/SRSButton';
+import PrimaryButton from '../../components/ui/buttons/PrimaryButton/PrimaryButton';
+import TertiaryButton from '../../components/ui/buttons/TertiaryButton/TertiaryButton';
+import SecondaryButton from '../../components/ui/buttons/SecondaryButton/SecondaryButton';
+import SRSButton from '../../components/ui/buttons/SRSButton/SRSButton';
 
 interface MainProps {}
 

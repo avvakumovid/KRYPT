@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { Colors } from '../../../styles';
+import { Colors } from '../../../../styles';
 import { LinearGradient } from 'expo-linear-gradient';
-import ArrowLeft from '../../../assets/Icons/ArrowLeft';
-import ArrowRight from './../../../assets/Icons/ArrowRight';
+import ArrowLeft from '../../../../assets/Icons/ArrowLeft';
+import ArrowRight from '../../../../assets/Icons/ArrowRight';
 
 interface PrimaryButtonProps {
   disabled?: boolean;
