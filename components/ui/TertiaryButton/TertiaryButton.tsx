@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import ArrowLeft from '../../../assets/Icons/ArrowLeft';
 import ArrowRight from './../../../assets/Icons/ArrowRight';
 
-interface PrimaryButtonProps {
+interface TertiaryButtonProps {
   disabled?: boolean;
   leftIcon?: boolean;
   rightIcon?: boolean;
@@ -14,48 +14,48 @@ interface PrimaryButtonProps {
   onPress: () => {};
 }
 
-const PrimaryButton = ({
+const TertiaryButton = ({
   leftIcon = false,
   rightIcon = false,
   disabled = false,
   title,
   width,
   onPress,
-}: PrimaryButtonProps) => {
+}: TertiaryButtonProps) => {
   return (
-    <TouchableOpacity disabled={disabled} onPress={onPress}>
-      <LinearGradient
-        colors={
-          disabled ? [Colors.BLACK_1, Colors.BLACK_1] : Colors.GREEN_GRADIENT
-        }
-        style={[styles.container, { width }]}
-      >
-        {rightIcon && <ArrowLeft disabled={disabled} color={Colors.BLACK} />}
-        {title ? (
-          <Text
-            style={[
-              styles.title,
-              disabled ? { color: Colors.GREY } : { color: Colors.BLACK },
-            ]}
-          >
-            {title}
-          </Text>
-        ) : null}
-        {leftIcon && <ArrowRight disabled={disabled} color={Colors.BLACK} />}
-      </LinearGradient>
+    <TouchableOpacity
+      style={[styles.container, { width }]}
+      disabled={disabled}
+      onPress={onPress}
+    >
+      {rightIcon && <ArrowLeft disabled={disabled} color={Colors.GREEN} />}
+      {title ? (
+        <Text
+          style={[
+            styles.title,
+            disabled ? { color: Colors.GREY } : { color: Colors.GREEN },
+          ]}
+        >
+          {title}
+        </Text>
+      ) : null}
+      {leftIcon && <ArrowRight disabled={disabled} color={Colors.GREEN} />}
     </TouchableOpacity>
   );
 };
 
-export default PrimaryButton;
+export default TertiaryButton;
 
 const styles = StyleSheet.create({
   container: {
+    // borderWidth: 1,
+    // borderColor: Colors.GREEN,
+    // borderRadius: 999,
     paddingVertical: 19.5,
     alignItems: 'center',
     justifyContent: 'center',
     width: 350,
-    borderRadius: 999,
+
     flexDirection: 'row',
   },
   title: {

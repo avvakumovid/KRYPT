@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Typography } from '../../styles/index';
 import PrimaryButton from '../../components/ui/PrimaryButton/PrimaryButton';
 import SecondaryButton from './../../components/ui/SecondaryButton/SecondaryButton';
+import TertiaryButton from '../../components/ui/TertiaryButton/TertiaryButton';
+import SendButton from '../../components/ui/SendButton/SendButton';
 
 interface MainProps {}
 
@@ -11,7 +13,7 @@ const Main = ({}: MainProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <PrimaryButton
-        width={165}
+        width={350}
         title='trst'
         leftIcon={true}
         onPress={(): any => {}}
@@ -22,6 +24,15 @@ const Main = ({}: MainProps) => {
         leftIcon={true}
         onPress={(): any => {}}
       />
+      <TertiaryButton
+        disabled={true}
+        width={70}
+        leftIcon={true}
+        onPress={(): any => {}}
+      />
+      <SendButton type='Receive' onPress={(): any => {}} />
+      <SendButton type='Swap' onPress={(): any => {}} />
+      <SendButton type='Send' onPress={(): any => {}} />
     </SafeAreaView>
   );
 };

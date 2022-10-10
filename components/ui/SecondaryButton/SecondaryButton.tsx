@@ -10,7 +10,7 @@ interface SecondaryButtonProps {
   leftIcon?: boolean;
   rightIcon?: boolean;
   width: 350 | 165 | 70;
-  title: string;
+  title?: string;
   onPress: () => {};
 }
 
@@ -33,14 +33,16 @@ const SecondaryButton = ({
         style={[styles.container, { width }]}
       >
         {rightIcon && <ArrowLeft disabled={disabled} color={Colors.GREEN} />}
-        <Text
-          style={[
-            styles.title,
-            disabled ? { color: Colors.GREY } : { color: Colors.GREEN },
-          ]}
-        >
-          {title}
-        </Text>
+        {title ? (
+          <Text
+            style={[
+              styles.title,
+              disabled ? { color: Colors.GREY } : { color: Colors.GREEN },
+            ]}
+          >
+            {title}
+          </Text>
+        ) : null}
         {leftIcon && <ArrowRight disabled={disabled} color={Colors.GREEN} />}
       </LinearGradient>
     </TouchableOpacity>
