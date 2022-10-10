@@ -1,27 +1,33 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import React from 'react';
 
 import Send from '../../../assets/Icons/Send';
-import { Colors } from '../../../styles/index';
+import { Colors, Typography } from '../../../styles/index';
 import Swap from '../../../assets/Icons/Swap';
 import Receive from '../../../assets/Icons/Receive';
 
-interface SendButtonProps {
+interface SRSButtonProps {
   onPress: () => {};
   type: 'Send' | 'Receive' | 'Swap';
 }
 
-const SendButton = ({ onPress, type }: SendButtonProps) => {
+const SRSButton = ({ onPress, type }: SRSButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      {type == 'Swap' ? <Swap /> : type == 'Receive' ? <Receive /> : <Send />}
-    </TouchableOpacity>
+    <View style={styles.view}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        {type == 'Swap' ? <Swap /> : type == 'Receive' ? <Receive /> : <Send />}
+      </TouchableOpacity>
+    </View>
   );
 };
 
-export default SendButton;
+export default SRSButton;
 
 const styles = StyleSheet.create({
+  view: {
+    // alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
     alignItems: 'center',
     justifyContent: 'center',
