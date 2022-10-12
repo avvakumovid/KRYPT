@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
   heading: {
     alignSelf: 'flex-start',
     marginBottom: 28,
+    fontWeight: '600',
   },
   swapInfo: {
     flexDirection: 'row',
