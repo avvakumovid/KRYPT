@@ -13,13 +13,27 @@ import Input from '../../components/ui/textFields/Input';
 import RichTextBox from '../../components/ui/textFields/RichTextBox';
 import TransactionModal from '../../components/TransactionModal/TransactionModal';
 import SwapConfirmation from '../../components/SwapConfirmation/SwapConfirmation';
+import BTC from '../../assets/Icons/Currencies/BTC';
+import ETC from '../../assets/Icons/Currencies/ETC';
 
 interface MainProps {}
 
 const Main = ({}: MainProps) => {
   return (
     <SafeAreaView style={styles.container}>
-      <SwapConfirmation />
+      <SwapConfirmation
+        fromIcon={<BTC />}
+        toIcon={<ETC />}
+        fromSumma={0.1298}
+        toSumma={0.1642}
+        fromUSD={3.00912}
+        toUSD={3.01}
+        fromСurrency={'BTC'}
+        toСurrency={'ETH'}
+        fromWalletAddress={'0x8dfu8dfj8ja8289d93dj9d3...00kdiwjd'}
+        toWalletAddress={'0x8dfu8dfj8ja8289d93dj9d3...00kdiwjd'}
+        gasFee={0.004}
+      />
       {/* <TransactionModal isSuccess={false} /> */}
       {/* <PrimaryButton
         width={350}

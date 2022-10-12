@@ -7,14 +7,19 @@ import Swap from '../../../../assets/Icons/Swap';
 import Receive from '../../../../assets/Icons/Receive';
 
 interface CircleBtnProps {
-  onPress: () => {};
+  onPress?: () => {};
   children: any;
+  disabled?: boolean;
 }
 
-const CircleBtn = ({ onPress, children }: CircleBtnProps) => {
+const CircleBtn = ({ onPress, children, disabled = false }: CircleBtnProps) => {
   return (
     <View style={styles.view}>
-      <TouchableOpacity style={styles.container} onPress={onPress}>
+      <TouchableOpacity
+        disabled={disabled}
+        style={styles.container}
+        onPress={onPress}
+      >
         {children}
       </TouchableOpacity>
     </View>

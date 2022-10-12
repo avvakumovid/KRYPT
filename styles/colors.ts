@@ -7,12 +7,13 @@ export const BLACK = '#101212';
 export const GREY = '#565657';
 export const GREY_BG = '#212225';
 
+
 //UTILLITY COLORS
 
 export const GREEN_U = '#52D377';
 export const YELLOW_U = '#FA9A2A';
 export const RED_U = '#EE3232';
-
+export const GREY_U = '#2A2B2E'
 //BLACK
 
 
