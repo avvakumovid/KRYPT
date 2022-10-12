@@ -6,22 +6,22 @@ import { Colors, Typography } from '../../../../styles/index';
 import Swap from '../../../../assets/Icons/Swap';
 import Receive from '../../../../assets/Icons/Receive';
 
-interface SRSButtonProps {
+interface CircleBtnProps {
   onPress: () => {};
-  type: 'Send' | 'Receive' | 'Swap';
+  children: any;
 }
 
-const SRSButton = ({ onPress, type }: SRSButtonProps) => {
+const CircleBtn = ({ onPress, children }: CircleBtnProps) => {
   return (
     <View style={styles.view}>
       <TouchableOpacity style={styles.container} onPress={onPress}>
-        {type == 'Swap' ? <Swap /> : type == 'Receive' ? <Receive /> : <Send />}
+        {children}
       </TouchableOpacity>
     </View>
   );
 };
 
-export default SRSButton;
+export default CircleBtn;
 
 const styles = StyleSheet.create({
   view: {
