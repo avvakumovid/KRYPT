@@ -8,12 +8,14 @@ interface InputProps {
   lable: string;
   isError?: boolean;
   isSuccess?: boolean;
+  isDisabled?: boolean;
 }
 //TODO: Cursor Color
 const Input = ({
   placeholder,
   isError = false,
   isSuccess = false,
+  isDisabled = false,
   lable,
 }: InputProps) => {
   const [isActive, setActive] = useState(false);
@@ -22,6 +24,7 @@ const Input = ({
       <Text style={styles.lable}>{lable}</Text>
       <View style={styles.inputContainer}>
         <TextInput
+          editable={!isDisabled}
           onFocus={() => {
             setActive(true);
           }}
@@ -38,6 +41,8 @@ const Input = ({
                 ? Colors.RED_U
                 : isSuccess
                 ? Colors.GREEN_U
+                : isDisabled
+                ? Colors.GREY
                 : Colors.WHITE,
             },
           ]}
