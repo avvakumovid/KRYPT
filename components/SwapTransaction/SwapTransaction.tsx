@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Opener from '../../assets/Icons/Opener';
 import { Colors } from '../../styles';
-import CircleBtn from './../ui/buttons/CircleBtn/CircleBtn';
-import BTC from '../../assets/Icons/Currencies/BTC';
-import Line from './../../assets/Icons/Line';
-import InfoCircle from './../../assets/Icons/InfoCircle';
-import PrimaryButton from './../ui/buttons/PrimaryButton/PrimaryButton';
+import Opener from '../../assets/Icons/Opener';
+import SRSButton from '../ui/buttons/SRSButton/SRSButton';
+import CircleBtn from '../ui/buttons/CircleBtn/CircleBtn';
+import Line from '../../assets/Icons/Line';
 import DocumentCopy from '../../assets/Icons/DocumentCopy';
+import InfoCircle from '../../assets/Icons/InfoCircle';
+import PrimaryButton from '../ui/buttons/PrimaryButton/PrimaryButton';
 
 interface SwapTransactionProps {
   fromIcon: JSX.Element;
@@ -16,17 +16,26 @@ interface SwapTransactionProps {
   fromUSD: number;
   fromWalletAddress: string;
 
+  toIcon: JSX.Element;
+  toSumma: number;
+  toСurrency: string;
+  toUSD: number;
   toWalletAddress: string;
 
   gasFee: number;
 }
 
-const SwapConfirmation = ({
+const SwapTransaction = ({
   fromIcon,
   fromSumma,
   fromUSD,
   fromСurrency,
   fromWalletAddress,
+
+  toIcon,
+  toSumma,
+  toUSD,
+  toСurrency,
   toWalletAddress,
 
   gasFee,
@@ -34,12 +43,23 @@ const SwapConfirmation = ({
   return (
     <View style={styles.container}>
       <Opener style={styles.opener} />
-      <Text style={[styles.text, styles.heading]}>Swap Confirmation</Text>
-      <View style={styles.main}>
-        <CircleBtn>{fromIcon}</CircleBtn>
-
-        <Text style={[styles.text, styles.mainHeading]}>{fromSumma} BTC</Text>
-        <Text style={[styles.text, styles.mainSub]}>${fromUSD}</Text>
+      <Text style={[styles.text, styles.heading]}>Swap Transaction</Text>
+      <View style={styles.swapInfo}>
+        <View style={styles.swapInfoItem}>
+          <CircleBtn disabled={true}>{fromIcon}</CircleBtn>
+          <Text style={[styles.text, styles.swapInfoHeading]}>
+            {fromSumma} {fromСurrency}
+          </Text>
+          <Text style={[styles.text, styles.swapInfoSub]}>${fromUSD}</Text>
+        </View>
+        <SRSButton onPress={(): any => {}} type={'Swap'} />
+        <View style={styles.swapInfoItem}>
+          <CircleBtn disabled={true}>{toIcon}</CircleBtn>
+          <Text style={[styles.text, styles.swapInfoHeading]}>
+            {toSumma} {toСurrency}
+          </Text>
+          <Text style={[styles.text, styles.swapInfoSub]}>${toUSD}</Text>
+        </View>
       </View>
       <Line />
       <View style={styles.addresses}>
@@ -90,13 +110,13 @@ const SwapConfirmation = ({
   );
 };
 
-export default SwapConfirmation;
+export default SwapTransaction;
 
 const styles = StyleSheet.create({
   container: {
     height: 673,
     width: 390,
-    backgroundColor: Colors.BLACK_BG,
+    backgroundColor: Colors.BLACK_1,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingTop: 25,
@@ -105,28 +125,33 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontWeight: '500',
     color: Colors.WHITE,
   },
   opener: {
-    marginBottom: 23,
+    marginBottom: 31,
   },
   heading: {
     alignSelf: 'flex-start',
-    marginBottom: 30,
+    marginBottom: 28,
     fontWeight: '600',
   },
-  main: {
-    justifyContent: 'center',
+  swapInfo: {
+    flexDirection: 'row',
+    width: '100%',
     alignItems: 'center',
-    marginBottom: 22,
+    justifyContent: 'space-between',
+    marginBottom: 26,
   },
-  mainHeading: {
+  swapInfoItem: {
+    alignItems: 'center',
+  },
+  swapInfoHeading: {
+    fontSize: 16,
     marginTop: 12,
-    marginBottom: 8,
   },
-  mainSub: {
+  swapInfoSub: {
     fontSize: 12,
+    marginTop: 8,
   },
   addresses: {
     marginVertical: 24,
@@ -152,7 +177,7 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
   gasFeeTitle: {
-    color: Colors.WHITE,
+    color: Colors.GREY,
   },
   notification: {
     marginTop: 24,
