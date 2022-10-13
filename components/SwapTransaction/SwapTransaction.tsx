@@ -8,6 +8,7 @@ import Line from '../../assets/Icons/Line';
 import DocumentCopy from '../../assets/Icons/DocumentCopy';
 import InfoCircle from '../../assets/Icons/InfoCircle';
 import PrimaryButton from '../ui/buttons/PrimaryButton/PrimaryButton';
+import BottomBG from '../ui/bottomBG/BottomBG';
 
 interface SwapTransactionProps {
   fromIcon: JSX.Element;
@@ -41,9 +42,10 @@ const SwapTransaction = ({
   gasFee,
 }: SwapTransactionProps) => {
   return (
-    <View style={styles.container}>
-      <Opener style={styles.opener} />
-      <Text style={[styles.text, styles.heading]}>Swap Transaction</Text>
+    <BottomBG height={673} title='Swap Transaction'>
+      {/* <View style={styles.container}>
+        <Opener style={styles.opener} />
+        <Text style={[styles.text, styles.heading]}>Swap Transaction</Text> */}
       <View style={styles.swapInfo}>
         <View style={styles.swapInfoItem}>
           <CircleBtn disabled={true}>{fromIcon}</CircleBtn>
@@ -106,7 +108,8 @@ const SwapTransaction = ({
         </Text>
       </View>
       <PrimaryButton title='Confirm' onPress={(): any => {}} width={350} />
-    </View>
+      {/* </View> */}
+    </BottomBG>
   );
 };
 

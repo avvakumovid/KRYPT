@@ -8,12 +8,18 @@ import SearchNormal from '../../assets/Icons/SearchNormal';
 import AssetCard from './components/AssetCard';
 import Line from './../../assets/Icons/Line';
 import { currencies } from './../../service/currencies';
+import BottomBG from '../ui/bottomBG/BottomBG';
 
 const SelectToken = () => {
   return (
-    <View style={styles.container}>
+    <BottomBG
+      height={624}
+      title='Select Token'
+      backgroundColor={Colors.BLACK_BG}
+    >
+      {/* <View style={styles.container}>
       <Opener style={styles.opener} />
-      <Text style={[styles.text, styles.heading]}>Select Token</Text>
+      <Text style={[styles.text, styles.heading]}>Select Token</Text> */}
       <View style={styles.searchField}>
         <Input
           icon={<SearchNormal />}
@@ -33,7 +39,8 @@ const SelectToken = () => {
           />
         ))}
       </ScrollView>
-    </View>
+      {/* </View> */}
+    </BottomBG>
   );
 };
 
