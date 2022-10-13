@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { Path } from 'react-native-svg';
 
-const HABR = (props: any) => (
+const HBAR = (props: any) => (
   <Svg
     width={16}
     height={16}
@@ -16,4 +16,4 @@ const HABR = (props: any) => (
   </Svg>
 );
 
-export default HABR;
+export default HBAR;
