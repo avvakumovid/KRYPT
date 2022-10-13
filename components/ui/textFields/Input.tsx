@@ -9,6 +9,7 @@ interface InputProps {
   isError?: boolean;
   isSuccess?: boolean;
   isDisabled?: boolean;
+  icon: any;
 }
 //TODO: Cursor Color
 const Input = ({
@@ -17,8 +18,14 @@ const Input = ({
   isSuccess = false,
   isDisabled = false,
   lable,
+  icon,
 }: InputProps) => {
   const [isActive, setActive] = useState(false);
+  // icon.props.color = Colors.WHITE;
+  const ClonedElementWithMoreProps = React.cloneElement(icon, {
+    style: styles.icon,
+    color: isActive ? Colors.WHITE : Colors.GREY,
+  });
   return (
     <View style={styles.container}>
       <Text style={styles.lable}>{lable}</Text>
@@ -47,10 +54,11 @@ const Input = ({
             },
           ]}
         ></TextInput>
-        <EyeIcon
+        {/* <EyeIcon
           style={styles.icon}
           color={isActive ? Colors.WHITE : Colors.GREY}
-        />
+        /> */}
+        {ClonedElementWithMoreProps}
       </View>
     </View>
   );
@@ -81,6 +89,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   lable: {
+    marginLeft: 10,
     color: Colors.WHITE,
     alignSelf: 'flex-start',
     marginBottom: 8,

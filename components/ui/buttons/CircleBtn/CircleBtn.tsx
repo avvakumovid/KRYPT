@@ -12,7 +12,8 @@ interface CircleBtnProps {
   disabled?: boolean;
 }
 
-const CircleBtn = ({ onPress, children, disabled = false }: CircleBtnProps) => {
+
+const CircleBtn = ({ children, disabled = false, onPress }: CircleBtnProps) => {
   return (
     <View style={styles.view}>
       <TouchableOpacity
