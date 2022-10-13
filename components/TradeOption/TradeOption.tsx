@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import BottomBG from '../ui/bottomBG/BottomBG';
 import { Colors } from '../../styles';
@@ -6,15 +6,15 @@ import ArrowRightSimple from '../../assets/Icons/ArrowRightSimple';
 
 const TradeOption = () => {
   return (
-    <BottomBG height={229} title='Scan QR code'>
-      <View style={styles.item}>
+    <BottomBG height={229} title='Trade Options'>
+      <TouchableOpacity style={styles.item}>
         <Text style={styles.text}>Buy</Text>
         <ArrowRightSimple />
-      </View>
-      <View style={styles.item}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
         <Text style={styles.text}>Sale</Text>
         <ArrowRightSimple />
-      </View>
+      </TouchableOpacity>
     </BottomBG>
   );
 };
