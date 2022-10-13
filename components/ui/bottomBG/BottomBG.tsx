@@ -13,7 +13,7 @@ interface BottomBGProps {
 const BottomBG = ({
   title,
   children,
-  backgroundColor = Colors.BLACK_1,
+  backgroundColor = Colors.BLACK_BG,
   height = 673,
 }: BottomBGProps) => {
   return (
